@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 
 const Counter = () => {
-  const [counter, setCounter] = useState(15);
+  const [counter, setCounter] = useState(0);
 
   const AddCounter = () => {
     if (counter >= 20) {
       return;
     }
-    setCounter(counter + 1);
+    setCounter(prevCounter=>prevCounter+1);
+    setCounter(prevCounter=>prevCounter+1);
+    setCounter(prevCounter=>prevCounter+1);
+    setCounter(prevCounter=>prevCounter+1);
   };
 
   const RemoveCounter = () => {
