@@ -5,11 +5,11 @@ function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setUser } = useContext(UserContext);
+  const { addUser } = useContext(UserContext);
 
   const onClickHandler = (e) => {
     e.preventDefault();
-    setUser({ userName, password });
+    addUser({ userName, password });
   };
   return (
     <>
@@ -19,15 +19,13 @@ function Login() {
         placeholder="username"
         value={userName}
         onChange={(e) => setUserName(e.target.value)}
-      />
-      {" "}
+      />{" "}
       <input
         type="password"
         placeholder="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-      />
-      {" "}
+      />{" "}
       <button onClick={onClickHandler}>Submit</button>
     </>
   );
